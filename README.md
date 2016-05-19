@@ -35,6 +35,7 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 
  * The package `rulebasedsrl` contains the runnable pipelines (one for English and one for German) which make use of the [DKPro Core](https://dkpro.github.io/dkpro-core/) framework. 
  * To run the pipelines, you need to obtain the English or German Wacky corpus which is already tokenized, POS-tagged and lemmatized. You also need the SemLink resource which is read by `RoleMappingUtil`.
+ * Another requirement is a UBY database, either a MySQL database or a H2 file database. The English UBY is available for download here: http://uby.ukp.informatik.tu-darmstadt.de/uby/. For German, please contact us to obtain a database, this requires that you have a GermaNet license.
  * The pipelines should be understood as just one particular example of applying the rule-based labeling - when applying it to other corpora, the reader needs to be replaced and components for tokenizing, POS-tagging and lemmatizing need to be added to the pipelines.
 
 ## Requirements
