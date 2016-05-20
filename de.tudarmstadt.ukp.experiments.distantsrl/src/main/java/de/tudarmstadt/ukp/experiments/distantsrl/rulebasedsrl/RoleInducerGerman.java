@@ -88,7 +88,7 @@ public class RoleInducerGerman {
 		} else if (depType.equals("OP") ) {
 			roleLabel = "Theme%Co-Theme%Topic";
 			
-		} else if (depType.equals("OA2") && (govSemField.equals("communication") || govSemField.equals("cognition"))) { // second accusative
+		} else if (depType.equals("OA2") && (govSemField.equals("Kommunikation") || govSemField.equals("Kognition"))) { // second accusative
 			roleLabel = "Attribute%Predicate";
 
 		} else if (depType.equals("SB")) {		// subject	
