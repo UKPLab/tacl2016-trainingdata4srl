@@ -1,7 +1,7 @@
 # Generating Training Data for Semantic Role Labeling
 
 
-This repository contains the code for automated labeling of FrameNet roles in sense-labeled text as described in section 4 of our TACL paper.
+This repository contains the code for automated labeling of FrameNet roles in arbitrary sense-labeled and linguistically preprocessed text as described in section 4 of our TACL paper.
 
 Please use the following citation:
 
