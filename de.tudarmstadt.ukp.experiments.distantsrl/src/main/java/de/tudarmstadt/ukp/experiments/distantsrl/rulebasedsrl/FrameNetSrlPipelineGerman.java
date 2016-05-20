@@ -35,6 +35,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.CompressionMethod;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceObjectProviderBase;
 import de.tudarmstadt.ukp.dkpro.core.io.imscwb.ImsCwbReader;
+import de.tudarmstadt.ukp.dkpro.core.io.xmi.XmiReader;
 import de.tudarmstadt.ukp.dkpro.core.io.xmi.XmiWriter;
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordNamedEntityRecognizer;
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordParser;
@@ -68,13 +69,22 @@ public class FrameNetSrlPipelineGerman {
 		    throws UIMAException, IOException
 		{
 		
+//       CollectionReaderDescription reader = createReaderDescription(
+//                ImsCwbReader.class,
+//                ImsCwbReader.PARAM_ENCODING, "ISO-8859-1",
+//                ResourceCollectionReaderBase.PARAM_SOURCE_LOCATION,     new File(sourceLocationBase).getAbsolutePath(),
+//                ResourceCollectionReaderBase.PARAM_PATTERNS, new String[] { "[+]*.xml" },
+//                ResourceCollectionReaderBase.PARAM_LANGUAGE, "de"
+//				);
+       
+	    // this assumes that the following preprocessing has been performed:
+	    // tokenizing, sentence splitting, POS-tagging, lemmatization, sense tagging with FrameNet senses
        CollectionReaderDescription reader = createReaderDescription(
-                ImsCwbReader.class,
-                ImsCwbReader.PARAM_ENCODING, "ISO-8859-1",
-                ResourceCollectionReaderBase.PARAM_SOURCE_LOCATION,     new File(sourceLocationBase).getAbsolutePath(),
-                ResourceCollectionReaderBase.PARAM_PATTERNS, new String[] { "[+]*.xml" },
-                ResourceCollectionReaderBase.PARAM_LANGUAGE, "de"
-				);
+               XmiReader.class,
+               ResourceCollectionReaderBase.PARAM_SOURCE_LOCATION, sourceLocationBase,
+               ResourceCollectionReaderBase.PARAM_PATTERNS, new String [] {"*.xmi.bz2"}
+               );
+
 		
        AnalysisEngineDescription separatedParticleAnnotator = createEngineDescription(GermanSeparatedParticleAnnotator.class);
 	        
@@ -101,7 +111,8 @@ public class FrameNetSrlPipelineGerman {
        AnalysisEngineDescription parser = createEngineDescription(StanfordParser.class,
                StanfordParser.PARAM_LANGUAGE, "de",
                StanfordParser.PARAM_READ_POS, true,
-               StanfordParser.PARAM_WRITE_POS, false
+               StanfordParser.PARAM_WRITE_POS, false,
+               StanfordParser.PARAM_WRITE_CONSTITUENT, true
                );
 
 	
