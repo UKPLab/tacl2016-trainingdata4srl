@@ -34,9 +34,9 @@ Don't hesitate to send us an e-mail or report an issue, if something is broken (
 ## Project structure
 
  * The package `rulebasedsrl` contains the runnable pipelines (one for English and one for German) which make use of the [DKPro Core](https://dkpro.github.io/dkpro-core/) framework. 
- * To run the pipelines, you need to obtain several datasets and resources:
-   * *corpora* the pipelines assume corpora with the following preprocessing annotations: tokenizing, POS-tagging, lemmatization, as well as FrameNet frame annotations for verbs.  
-   * *lexical resources* You need the SemLink resource which is read by `RoleMappingUtil`. Another requirement is a UBY database, either a MySQL database or a H2 file database. The English UBY is available for download here: http://uby.ukp.informatik.tu-darmstadt.de/uby/. For German, please contact us to obtain a database, this requires that you have a [GermaNet](http://www.sfs.uni-tuebingen.de/GermaNet/) license.
+ * To run the pipelines, you need to obtain the following corpora and lexical resources:
+   * the pipelines assume corpora with the following preprocessing annotations: tokenizing, POS-tagging, lemmatization, as well as FrameNet frame annotations for verbs.  
+   * You need the SemLink resource which is read by `RoleMappingUtil`. Another requirement is a UBY database, either a MySQL database or a H2 file database. The English UBY is available for download here: http://uby.ukp.informatik.tu-darmstadt.de/uby/. For German, please contact us to obtain a database, this requires that you have a [GermaNet](http://www.sfs.uni-tuebingen.de/GermaNet/) license.
  
 
 ## Requirements
