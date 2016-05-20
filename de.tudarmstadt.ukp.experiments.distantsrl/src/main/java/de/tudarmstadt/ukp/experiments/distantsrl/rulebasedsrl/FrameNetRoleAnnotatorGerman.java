@@ -53,13 +53,18 @@ import de.tudarmstadt.ukp.dkpro.wsd.type.WSDItem;
  *
  */
 @TypeCapability(
-		inputs = {"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
-				"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma",
-				"de.tudarmstadt.ukp.dkpro.core.lexmorph.type.POS",
-				"de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;",
-				"de.tudarmstadt.ukp.dkpro.core.semantics.type.SemanticField"},
-		outputs = {
-				"de.tudarmstadt.ukp.dkpro.core.api.semantics.type.SemanticArgument"})
+        inputs = {"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
+                "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence",
+                "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma",
+                "de.tudarmstadt.ukp.dkpro.core.lexmorph.type.POS",
+                "de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;",
+                "de.tudarmstadt.ukp.dkpro.core.semantics.type.SemanticField",
+                "de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.Constituent",
+                "de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency",
+                "de.tudarmstadt.ukp.dkpro.wsd.type.WSDItem", // the targets annotated with the FrameNet sense
+                "de.tudarmstadt.ukp.dkpro.wsd.type.Sense"}, // the FrameNet sense
+        outputs = {"de.tudarmstadt.ukp.dkpro.core.api.semantics.type.SemanticPredicate",
+                "de.tudarmstadt.ukp.dkpro.core.api.semantics.type.SemanticArgument"})
 
 
 public class FrameNetRoleAnnotatorGerman extends JCasAnnotator_ImplBase
