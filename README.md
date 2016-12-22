@@ -13,7 +13,7 @@ author = {Silvana Hartmann and Judith Eckle-Kohler and Iryna Gurevych},
 	year = {2016},
 	journal = {Transactions of the Association for Computational Linguistics},
 	number = {1},
-	pages = {(to appear)},
+	pages = {197--213},
 	volume = {4}
 }
 ```
